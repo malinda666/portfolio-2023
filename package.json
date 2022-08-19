@@ -11,19 +11,24 @@
   },
   "dependencies": {
     "gsap": "^3.11.0",
+    "locomotive-scroll": "^4.1.4",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.54.4",
-    "smooth-scrollbar": "^8.7.5"
+    "react-locomotive-scroll": "^0.2.2",
+    "react-nice-scroll": "^1.0.0",
+    "sass": "^1.54.4"
   },
   "devDependencies": {
     "@types/node": "18.7.6",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
     "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
   }
 }

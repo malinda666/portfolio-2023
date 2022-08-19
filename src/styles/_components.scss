@@ -1,0 +1,7 @@
+section {
+  @apply relative w-full min-h-full flex items-center justify-center;
+}
+
+.title {
+  @apply font-title2 capitalize tracking-tighter;
+}

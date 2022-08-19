@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
 
-// @font-face {
-//   font-family: 'Radio Grotesk Regular';
-//   src: url('../../public/assets/fonts/PPRadioGrotesk-Regular.otf');
-// }
-// @font-face {
-//   font-family: 'Radio Grotesk Black';
-//   src: url('../../public/assets/fonts/PPRadioGrotesk-Black.otf');
-// }
+@font-face {
+  font-family: 'Wagon Regular';
+  src: url('../../public/fonts/Wagon-ExtraLight.otf');
+}
+@font-face {
+  font-family: 'Wagon Italic';
+  src: url('../../public/fonts/Wagon-ExtraLightItalic.otf');
+}
+@font-face {
+  font-family: 'Wagon Black';
+  src: url('../../public/fonts/Wagon-Bold.otf');
+}
+@font-face {
+  font-family: 'Dirtyline';
+  src: url('../../public/fonts/Dirtyline\ 36daysoftype\ 2022.woff2');
+}

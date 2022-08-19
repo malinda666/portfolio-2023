@@ -9,14 +9,14 @@ module.exports = {
     extend: {
       colors: {
         black: '#000000',
-        dark: '#14213d',
+        dark: '#2d232e',
         third: '#fca311',
-        light: '#e5e5e5',
-        white: '#ffffff',
-        accent: '#1bb0ce',
+        light: '#f1f0ea',
+        accent: '#3a0ca3',
       },
       fontFamily: {
-        title: ['Radio Grotesk Regular', 'sans-serif'],
+        title: ['Dirtyline', 'sans-serif'],
+        title2: ['Wagon Italic', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
     },

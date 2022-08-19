@@ -5,6 +5,7 @@
 @import 'react-nice-scroll/dist/styles.css';
 @import './fonts';
 @import './loco';
+@import './components';
 
 html,
 body {
@@ -12,6 +13,9 @@ body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body {
+  @apply bg-dark text-light;
 }
 
 a {

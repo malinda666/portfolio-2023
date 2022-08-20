@@ -1,7 +1,48 @@
 section {
   @apply relative w-full min-h-full flex items-center justify-center;
+
+  &.section-dark {
+    @apply bg-black text-light;
+  }
+  &.section-light {
+    @apply bg-light text-dark;
+  }
 }
 
 .title {
-  @apply font-title2 capitalize tracking-tighter;
+  @apply relative overflow-hidden leading-[1.1] w-full text-center tracking-tighter;
+
+  &-base {
+    @apply text-[3vw];
+  }
+  &-md {
+    @apply text-[7vw];
+  }
+  &-lg {
+    @apply text-[15vw];
+  }
+  &-xl {
+    @apply text-[25vw];
+  }
+  &-normal {
+    @apply font-title;
+  }
+  &-italic {
+    @apply font-title2;
+  }
+}
+.paragraph {
+  @apply w-full font-body text-base text-gray-400;
+  .para-base {
+    @apply text-base;
+  }
+  .para-md {
+    @apply text-base;
+  }
+  .para-lg {
+    font-size: 3vw;
+  }
+  .para-xl {
+    @apply text-xl;
+  }
 }

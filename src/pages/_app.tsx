@@ -1,10 +1,55 @@
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
-import { useRef, MutableRefObject } from 'react'
-import { LocomotiveScrollProvider as RLSProvider } from 'react-locomotive-scroll'
+import { useRef, MutableRefObject, useEffect } from 'react'
+import {
+  LocomotiveScrollProvider as RLSProvider,
+  useLocomotiveScroll,
+} from 'react-locomotive-scroll'
 import { useRouter } from 'next/router'
+import { gsap } from 'gsap/dist/gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 import Layout from '@/components/layout'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const ScrollTriggerProxy = () => {
+  const { scroll } = useLocomotiveScroll()
+
+  useEffect(() => {
+    if (scroll) {
+      const element = scroll?.el
+
+      scroll.on('scroll', () => {
+        ScrollTrigger.update()
+        ScrollTrigger.refresh()
+      })
+      ScrollTrigger.scrollerProxy(element, {
+        scrollTop(value) {
+          return arguments.length
+            ? scroll.scrollTo(value, 0, 0)
+            : scroll.scroll.instance.scroll.y
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          }
+        },
+        pinType: element.style.transform ? 'transform' : 'fixed',
+      })
+    }
+
+    return () => {
+      ScrollTrigger.addEventListener('refresh', () => scroll?.update())
+      ScrollTrigger.refresh()
+    }
+  }, [scroll])
+
+  return null
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const scrollRef = useRef(null) as MutableRefObject<HTMLDivElement | null>
@@ -13,7 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <RLSProvider
       options={{
         smooth: true,
-        lerp: 0.12,
         // ... all available Locomotive Scroll instance options
       }}
       watch={
@@ -29,6 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
       containerRef={scrollRef}
     >
+      <ScrollTriggerProxy />
       <Layout containerRef={scrollRef}>
         <Component {...pageProps} />
       </Layout>

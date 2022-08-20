@@ -1,5 +1,8 @@
 import { FC, ReactNode, Ref } from 'react'
 import Head from 'next/head'
+import Script from 'next/script'
+
+import Header from './Header'
 
 interface LayoutProps {
   children: ReactNode
@@ -31,11 +34,13 @@ const Layout: FC<LayoutProps> = ({ children, containerRef }) => {
         />
         <link rel='manifest' href='/site.webmanifest' />
       </Head>
+      <Header />
       <main className='__layout'>
         <div className='' ref={containerRef} data-scroll-container>
           {children}
         </div>
       </main>
+      {/* <Script src='../../../public/assets/Split3.min.js'></Script> */}
     </>
   )
 }

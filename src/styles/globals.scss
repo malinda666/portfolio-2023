@@ -14,9 +14,6 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-body {
-  @apply bg-dark text-light;
-}
 
 a {
   color: inherit;
@@ -25,4 +22,30 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 15% repeat(3, 1fr) 15%;
+  gap: 0px 0px;
+  height: 100vh;
+  grid-template-areas:
+    '. . .'
+    'hero-title hero-title hero-title'
+    'hero-title hero-title hero-title'
+    'hero-para hero-para hero-scroller'
+    '. . .';
+}
+
+.hero-title {
+  grid-area: hero-title;
+}
+
+.hero-para {
+  grid-area: hero-para;
+}
+
+.hero-scroller {
+  grid-area: hero-scroller;
 }
